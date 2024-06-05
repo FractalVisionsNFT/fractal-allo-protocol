@@ -1,0 +1,207 @@
+.rounds__container {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  padding: 2rem 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
+  gap: 4px;
+  gap: 1rem;
+
+  .rounds__item__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin: 0 auto;
+    width: clamp(346px, 100%, 390px);
+    aspect-ratio: 1/1.1;
+    // padding: 0 10px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+    overflow: hidden;
+
+    // @include mediaMin(sm-desktop) {
+    //   width: 382px;
+    // }
+
+    .gradient__wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      width: 346px;
+      width: clamp(346px, 100%, 482px);
+      width: 100%;
+      aspect-ratio: 1/1.1;
+      // padding: 0 10px;
+      border-radius: 26px;
+      box-sizing: border-box;
+      cursor: pointer;
+      overflow: hidden;
+
+      .gradient {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1/1.1;
+        border-radius: 26px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: 0 auto;
+        background-image: linear-gradient(
+          to bottom,
+          transparent 10%,
+          #000 105%
+        );
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 26px;
+        box-shadow: 0px 3.462px 38.945px 0px rgba(75, 73, 73, 0.25);
+
+        // @include mediaMin(sm-desktop) {
+        //   display: none;
+        // }
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 26px;
+        object-fit: cover;
+        border: 1px solid #a3a3a3;
+        // border: 2px solid yellow;
+        background-image: linear-gradient(
+          to bottom,
+          transparent 10%,
+          #000 100%
+        );
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        // @include mediaMin(sm-desktop) {
+        //   border: unset;
+        //   width: 100%;
+        // }
+      }
+    }
+
+    .nft__details {
+      width: 90%;
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-flow: row;
+      bottom: 45px;
+      left: 0px;
+      right: 0;
+      margin: 0 auto;
+      z-index: 10;
+
+      // @include mediaMin(sm-desktop) {
+      //   bottom: 35px;
+      // }
+
+      & > p {
+        font-size: clamp(15px, 2.5vw, 20px);
+        font-weight: 700;
+        max-width: 300px;
+        color: #fff;
+        text-wrap: balance;
+        align-self: flex-end;
+      }
+
+      .floor__price {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-end;
+        justify-content: center;
+
+        span {
+          color: #f1f1f1;
+          font-size: 12px;
+          font-weight: 300;
+          letter-spacing: -0.238px;
+        }
+
+        p {
+          color: #fff;
+          font-size: clamp(15px, 2.5vw, 20px);
+          font-style: normal;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .mission__wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      width: clamp(346px, 100%, 402px);
+      width: 100%;
+      aspect-ratio: 1/1.1;
+      // padding: 0 10px;
+      border-radius: 30px;
+      box-sizing: border-box;
+      cursor: pointer;
+      overflow: hidden;
+      // border: 3px solid red;
+
+      &:hover {
+        .mission__details__wrapper {
+          // animation-name: animate-up;
+          // animation-duration: 1s;
+          // animation-timing-function: cubic-bezier(0.14, 0.86, 0.82, 0.17);
+          // animation-direction: normal;
+          // animation-fill-mode: both;
+          top: 0;
+          opacity: 1;
+          transition: top 500ms ease-in-out, opacity 200ms ease-in-out;
+        }
+      }
+
+      .mission__details__wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 120%;
+        opacity: 0;
+        padding: 20px;
+        border-radius: inherit;
+        box-sizing: border-box;
+        cursor: pointer;
+        overflow: hidden;
+        z-index: 20;
+        transition: top 500ms ease-in-out, opacity 200ms ease-in-out;
+
+        // @include mediaMin(sm-desktop) {
+        //   padding: 35px;
+        // }
+      }
+    }
+  }
+}
+
+@keyframes animate-up {
+  from {
+    top: 80%;
+  }
+
+  to {
+    top: 0%;
+  }
+}
